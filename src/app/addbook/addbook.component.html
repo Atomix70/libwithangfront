@@ -1,0 +1,54 @@
+<div class="container3" id="container3">
+    
+      
+    
+	
+    <form (ngSubmit)="addBook()">
+        <h1>Add a new Book</h1>
+        <span>Add a new book to the library</span>
+        
+           
+            <div class="avatar-upload">
+                <div class="avatar-edit">
+                    <input type='file' id="imageUpload"  accept=".png, .jpg, .jpeg" name="Image" [(ngModel)]="newBook.bookImage" />
+                    <label for="imageUpload"></label>
+                </div>
+                <div class="avatar-preview">
+                    <div id="imagePreview" style="background-image: url(images/book-cover-placeholder.png);">
+                    </div>
+                </div>
+            </div>
+        
+        <br>
+        <input type="text" placeholder="Title" name="Title" [(ngModel)]="newBook.bookTitle" />
+        <input type="text" placeholder="Author" name="Author" [(ngModel)]="newBook.bookAuthor" />
+        <input type="text" placeholder="Country" name="Country" [(ngModel)]="newBook.bookCountry" />
+        <input type="text" placeholder="Language" name="Language" [(ngModel)]="newBook.bookLanguage"/>
+        <input type="text" placeholder="Pages" name="Pages" [(ngModel)]="newBook.bookPages" />
+        <input type="text" placeholder="Year" name="Year"[(ngModel)]="newBook.bookYear"/>
+        <input type="text" placeholder="Wiikepedia Link" name="Link"[(ngModel)]="newBook.bookLink"/>
+        
+        <a href="#"></a>
+        <input class="btn btn-primary"type="submit" value="Upload">
+    </form>
+   
+</div>
+
+
+
+<script>
+function readURL(input) {
+if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+        $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+        $('#imagePreview').hide();
+        $('#imagePreview').fadeIn(650);
+    }
+    reader.readAsDataURL(input.files[0]);
+}
+}
+$("#imageUpload").change(function() {
+readURL(this);
+});
+</script>

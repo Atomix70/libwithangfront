@@ -1,0 +1,71 @@
+
+<div id="masthead">  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          
+          <h1>Storystrap&nbsp;<img src="logo.svg" >
+            <p class="lead"></p>
+          </h1>
+        </div>
+        <div class="col-md-5">
+          <div class="well well-lg"> 
+            <div class="row">
+              <div class="col-sm-12">
+                
+              
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div><!-- /cont -->
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="top-spacer"> </div>
+        </div>
+      </div> 
+    </div><!-- /cont -->
+    
+  </div>
+  
+  
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-md-12"> 
+        
+        <div class="panel">
+          <div class="panel-body">
+            
+            
+            <section class="cards-wrapper">
+              <div class="card-grid-space" *ngFor="let book of data.books">
+                <!-- <div class="num">01</div> -->
+                <a class="card" [routerLink]="['/books',book._id]" style="--bg-img: url(https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/html-syntax/cover.jpg)">
+                  <div>
+                    <h1>{{book.Title}}</h1>
+                    <!-- <p>The syntax of a language is how it works. How to actually write it. Learn HTML syntax…</p> -->
+                    <div class="date">{{book.Language}}</div>
+                    <div class="tags">
+                      <div class="tag">{{book.Author}}</div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              
+            </section> 
+          </div>
+        </div>
+        <div class="text-center">
+        <div class="btn btn-primary ld-ext-right" onclick="this.classList.toggle('running')">Load More<div class="ld ld-ring ld-spin"></div></div>                                                                               
+                                                 
+                                                        
+         </div><!--/col-12-->
+    </div>
+  </div>
+                                                  
+                                                                                  
+  <hr>
